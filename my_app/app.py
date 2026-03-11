@@ -236,7 +236,7 @@ def pca_2d(scaled):
 
 def tsne_2d(scaled, max_samples=2000):
     idx = np.random.choice(len(scaled), size=min(max_samples, len(scaled)), replace=False)
-    comps = TSNE(n_components=2, perplexity=40, random_state=42, n_iter=1000).fit_transform(scaled[idx])
+    comps = TSNE(n_components=2, perplexity=40, random_state=42, max_iter=1000).fit_transform(scaled[idx])
     return comps, idx
 
 
